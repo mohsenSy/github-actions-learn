@@ -1,0 +1,14 @@
+name: Label an issue
+on:
+  issues:
+    types:
+      - opened
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+    env:
+      ISSUE_URL: ${{ github.event.issue.html_url }}
+    steps:
+      - run: |
+          gh edit issue $ISSUE_URL --add-label "triage"
