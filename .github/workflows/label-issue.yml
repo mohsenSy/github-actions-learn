@@ -11,4 +11,4 @@ jobs:
       ISSUE_URL: ${{ github.event.issue.html_url }}
     steps:
       - run: |
-          gh edit issue $ISSUE_URL --add-label "triage"
+          gh issue edit $ISSUE_URL --add-label "triage"
